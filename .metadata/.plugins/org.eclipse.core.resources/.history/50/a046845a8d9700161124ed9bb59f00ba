@@ -1,0 +1,24 @@
+package com.bharatvision.saini.Firstmaven.Mydatabase;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import com.bharatvision.saini.Firstmaven.model.Massage;
+import com.bharatvision.saini.Firstmaven.model.Profile;
+
+public class Mydatabase {
+
+	private static Map<Long, Massage> massage = new HashMap<>();
+	private static Map<Long, Profile> profile = new HashMap<>();
+
+	public static Map<Long,Massage> getMassage(){
+		return massage;
+	}
+	
+	public static Map<Long,Profile> getProfile(){
+		return profile;
+		
+	}
+	
+	
+}

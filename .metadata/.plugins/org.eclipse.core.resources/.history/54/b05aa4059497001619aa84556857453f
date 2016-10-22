@@ -1,0 +1,5 @@
+package com.bharatvision.saini.Firstmaven.model;
+
+public class GeoData {
+
+}

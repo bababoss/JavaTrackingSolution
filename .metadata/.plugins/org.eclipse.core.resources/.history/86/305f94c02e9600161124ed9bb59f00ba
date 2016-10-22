@@ -1,0 +1,16 @@
+package com.bharatvision.saini.Firstmaven.resources;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+
+@Path("/massage")
+public class MassageResources {
+	
+	@GET
+	@Produces
+	public String getReources(){
+		return "Hi this suresh";
+	}
+
+}

@@ -1,0 +1,19 @@
+package com.bharatvision.saini.Firstmaven.service;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.bharatvision.saini.Firstmaven.model.Massage;
+
+public class Service {
+	
+	public List<Massage> getAllMassage(){
+		Massage m1= new Massage(1L, "heoow" ,"suresh");
+		Massage m2 = new Massage(2L,"hhfsjd", "mahedj");
+		List<Massage> list = new ArrayList<>();
+		list.add(m1);
+		list.add(m2);
+		return list;
+		
+	}
+
+}

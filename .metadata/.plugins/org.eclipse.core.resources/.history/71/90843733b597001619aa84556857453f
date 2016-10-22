@@ -1,0 +1,34 @@
+package com.bharatvision.saini.Firstmaven.service;
+import com.bharatvision.saini.Firstmaven.Mydatabase.Mydatabase;
+import com.bharatvision.saini.Firstmaven.model.GeoData;
+import com.mongodb.BasicDBObject;
+import com.mongodb.DBCollection;
+
+public class GeoDataService {
+	
+	Mydatabase myDBCollection = new Mydatabase();
+	
+	GeoData geodata = new GeoData();
+	DBCollection coll;
+	
+	public String insertData(){
+
+		try{
+			
+			BasicDBObject doc = new BasicDBObject("user_id", geodata.getUser_id())
+			        .append("device_id", geodata.getDevice_id())
+			        .append("latitude", geodata.getLatitude())
+			        .append("longitude", geodata.getLongitude())
+			        .append("created",geodata.getCreated());
+			coll=myDBCollection.dbconnect();
+			System.out.println("DataService done");
+			coll.insert(doc);
+			System.out.println("Data iinserted");
+		}catch(Exception e){
+			return "data base is not conneted";
+		}
+		
+		return "Data is inerted";
+	}
+
+}

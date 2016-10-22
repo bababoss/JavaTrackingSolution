@@ -1,0 +1,30 @@
+package com.bharatvision.saini.Firstmaven.resources;
+
+import java.util.List;
+import java.util.Map;
+
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+
+import com.bharatvision.saini.Firstmaven.model.Massage;
+import com.bharatvision.saini.Firstmaven.service.Service;
+
+@Path("/massage")
+public class MassageResources {
+	
+	Service massageService = new Service();
+
+	@GET
+	@Produces(MediaType.APPLICATION_XML)
+	public List<Massage> getReources(){
+		return massageService.getAllMassage();
+	}
+
+
+}
+

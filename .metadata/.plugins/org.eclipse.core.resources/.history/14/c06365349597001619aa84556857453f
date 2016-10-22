@@ -1,0 +1,12 @@
+package com.bharatvision.saini.Firstmaven.service;
+
+import com.mongodb.BasicDBObject;
+
+public class GeoDataService {
+	
+	BasicDBObject doc = new BasicDBObject("name", "MongoDB")
+	        .append("type", "database")
+	        .append("count", 1)
+	        .append("info", new BasicDBObject("x", 203).append("y", 102));
+
+}

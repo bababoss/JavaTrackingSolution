@@ -1,0 +1,69 @@
+package com.bharatvision.saini.Firstmaven.service;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import com.bharatvision.saini.Firstmaven.Mydatabase.Mydatabase;
+import com.bharatvision.saini.Firstmaven.model.Profile;
+import com.bharatvision.saini.Firstmaven.model.Massage;
+
+public class Service {
+	
+	private Map<Long,Massage> massages=Mydatabase.getMassage();
+	private Map<Long,Profile> profile = Mydatabase.getProfile();
+	
+	public Service(){
+		/**
+		 * Intilize massage data
+		 */
+		massages.put(1L, new Massage(1L,"fmsknjsg","wgsgwgg"));
+		massages.put(2L, new Massage(2L,"fsuresh","makhahf"));
+		
+		/**
+		 * Initilize profile
+		 */
+		profile.put(1L, new Profile(1L,"myprofile","suresh","kumar"));
+	}
+	
+	public List<Massage> getAllMassage(){
+//		Massage m1= new Massage(1L, "heoow" ,"suresh");
+//		Massage m2 = new Massage(2L,"hhfsjd", "mahedj");
+//		List<Massage> list = new ArrayList<>();
+//		list.add(m1);
+//		list.add(m2);
+//		return list;
+		
+		return new ArrayList<Massage>(massages.values());
+	}
+	
+	/**
+	 * Get list of all profile data
+	 * @return
+	 */
+	public List<Profile> getAllProfile(){
+		return new ArrayList<Profile>(profile.values());
+	}
+	
+	public Massage getMassage(long id){
+		return massages.get(id);
+	}
+	
+	public Massage addMassage(Massage massage){
+		massage.setId(massages.size()+1);
+		massages.put(massage.getId(), massage);
+		return massage;
+	}
+	
+	public Massage updateMassage(Massage massage){
+		if(massage.getId()<=0){
+			return null;
+		}
+		massages.put(massage.getId(), massage);
+		return massage;
+	}
+	
+	public Massage removeMassage(long id){
+		return massages.remove(id);
+	}
+
+}

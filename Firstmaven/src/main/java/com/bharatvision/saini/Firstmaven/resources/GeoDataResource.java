@@ -6,6 +6,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import com.bharatvision.saini.Firstmaven.model.GeoData;
 import com.bharatvision.saini.Firstmaven.service.GeoDataService;
 
 @Path("/tracker")
@@ -16,8 +17,8 @@ public class GeoDataResource {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.TEXT_PLAIN)
-	public String insertData(){
-		return geodataservice.insertData();
+	public String insertData(GeoData geodata){
+		return geodataservice.insertData(geodata);
 	}
 	
 }
